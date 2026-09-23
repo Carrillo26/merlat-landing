@@ -256,7 +256,7 @@ ul, ol {
   color: #ff8a80;
 }
 .section {
-  padding: 72px 0;
+  padding: 40px 0;
 }
 .section--muted {
   background: rgba(255, 255, 255, 0.45);
@@ -266,8 +266,16 @@ ul, ol {
   color: var(--white);
 }
 .section-head {
-  margin-bottom: 40px;
+  margin-bottom: 22px;
   max-width: 640px;
+}
+@media (max-width: 720px) {
+  .section {
+    padding: 32px 0;
+  }
+  .section-head {
+    margin-bottom: 16px;
+  }
 }
 .section-head--center {
   text-align: center;
@@ -365,7 +373,7 @@ ul, ol {
   display: grid;
   gap: 36px;
   align-items: center;
-  margin-bottom: 48px;
+  margin-bottom: 28px;
 }
 .hero h1 {
   font-size: clamp(2rem, 5vw, 3.25rem);
@@ -458,7 +466,7 @@ ul, ol {
 
 @media (min-width: 800px) {
   .hero {
-    padding: 72px 0 40px;
+    padding: 56px 0 28px;
   }
   .hero__grid {
     grid-template-columns: 1.2fr 0.8fr;
@@ -551,7 +559,7 @@ ul, ol {
 /* ——— Product layout + device mock ——— */
 .product-layout {
   display: grid;
-  gap: 40px;
+  gap: 28px;
   align-items: center;
 }
 @media (min-width: 900px) {
