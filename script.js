@@ -681,7 +681,7 @@
       return;
     }
 
-    var trigger = root.closest(".raise-funds") || root;
+    var trigger = root;
     if (!("IntersectionObserver" in window)) {
       draw();
       return;
