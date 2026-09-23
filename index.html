@@ -51,7 +51,7 @@
   </header>
 
   <main id="main">
-    <!-- HERO + STATS -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero__grid">
@@ -65,46 +65,6 @@
               <a class="btn btn--primary btn--lg" href="{{PUMPFUN_URL}}" data-i18n="hero.ctaBuy">Buy $MERLAT</a>
               <a class="btn btn--ghost btn--lg" href="#product" data-i18n="hero.ctaHow">See markets</a>
             </div>
-            <p class="hero__note" data-i18n="hero.cardNote">No fake TVL. No fake licenses. Product first.</p>
-          </div>
-          <div class="hero__visual" aria-hidden="true" data-reveal>
-            <div class="hero-card">
-              <div class="hero-card__row">
-                <span data-i18n="hero.stat1label">Demand today</span>
-                <strong data-i18n="hero.stat1short">Leaks to Polymarket</strong>
-              </div>
-              <div class="hero-card__row hero-card__row--accent">
-                <span data-i18n="hero.stat2label">Merlat wedge</span>
-                <strong data-i18n="hero.stat2short">Local · ES/PT · rails</strong>
-              </div>
-              <div class="hero-card__row">
-                <span data-i18n="hero.stat3label">Token role</span>
-                <strong data-i18n="hero.stat3short">Fees · gov · stake</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="stats-row" role="list" data-reveal-stagger>
-          <div class="stat" role="listitem">
-            <span class="stat__label" data-i18n="hero.proof1label">Soft raise</span>
-            <p class="stat__value">$50–100<span>K</span></p>
-            <p class="stat__hint" data-i18n="hero.proof1">Soft raise $50K–$100K</p>
-          </div>
-          <div class="stat" role="listitem">
-            <span class="stat__label" data-i18n="hero.proof2label">Product focus</span>
-            <p class="stat__value">ES/PT</p>
-            <p class="stat__hint" data-i18n="hero.proof2">ES / PT product focus</p>
-          </div>
-          <div class="stat" role="listitem">
-            <span class="stat__label" data-i18n="hero.proof3label">Product build</span>
-            <p class="stat__value">35<span>%</span></p>
-            <p class="stat__hint" data-i18n="funds.product">Product</p>
-          </div>
-          <div class="stat" role="listitem">
-            <span class="stat__label" data-i18n="hero.proof4label">Honesty</span>
-            <p class="stat__value" data-i18n="hero.proof4value">Day-1</p>
-            <p class="stat__hint" data-i18n="hero.proof3">Honest token utilities</p>
           </div>
         </div>
       </div>
@@ -119,12 +79,6 @@
           <p data-i18n="markets.sub">
             Football, inflation, elections — the questions people already argue about in Spanish and Portuguese. Percentages below are mock UI only.
           </p>
-          <ul class="check-list">
-            <li data-i18n="markets.bullet1">Spanish market cards inside the app</li>
-            <li data-i18n="markets.bullet2">Sports, macro, and politics categories</li>
-            <li data-i18n="markets.bullet3">Labeled examples — not live odds</li>
-          </ul>
-          <p class="section-note" data-i18n="markets.note">Illustrative layouts for storytelling. They are not tradable markets and do not reflect real odds or liquidity.</p>
         </div>
 
         <div class="markets-stage" data-reveal>
@@ -310,35 +264,13 @@
       </div>
     </section>
 
-    <!-- RAISE + USE OF FUNDS -->
+    <!-- RAISE / USE OF FUNDS -->
     <section class="section section--dark" id="raise">
       <div class="container">
-        <header class="section-head section-head--on-dark" data-reveal>
-          <span class="eyebrow eyebrow--on-dark" data-i18n="raise.eyebrow">Community raise · pump.fun</span>
-          <h2 data-i18n="raise.title">The raise</h2>
-          <p data-i18n="raise.sub">Soft goal: $50K–$100K USD. Enough to ship product, not theater.</p>
-        </header>
-        <div class="raise-grid" data-reveal-stagger>
-          <div class="raise-figure card card--on-dark">
-            <span class="eyebrow eyebrow--on-dark" data-i18n="raise.soft">Soft raise goal</span>
-            <p class="raise-figure__num">$50K–$100K</p>
-            <span class="raise-figure__hint" data-i18n="raise.usd">USD · community raise via pump.fun</span>
-          </div>
-          <div class="raise-why">
-            <h3 data-i18n="raise.whyTitle">Why now</h3>
-            <ul class="bullet-list bullet-list--on-dark">
-              <li data-i18n="raise.w1">Prediction markets are mainstream — LATAM still underserved</li>
-              <li data-i18n="raise.w2">Memecoin traders want a thesis beyond “number go up”</li>
-              <li data-i18n="raise.w3">Small raise keeps focus on MVP + compliance track, not burn</li>
-            </ul>
-            <p class="section-note section-note--on-dark" data-i18n="raise.honest">We are not claiming a completed license, live real-money ops in Brazil, or any partnership we have not signed. Capital funds the build.</p>
-          </div>
-        </div>
-
         <div class="raise-funds" data-reveal>
-          <header class="raise-funds__head">
+          <header class="section-head section-head--on-dark section-head--center raise-funds__head">
             <span class="eyebrow eyebrow--on-dark" data-i18n="funds.eyebrow">Locked allocation</span>
-            <h3 data-i18n="funds.title">Use of funds</h3>
+            <h2 data-i18n="funds.title">Use of funds</h2>
             <p data-i18n="funds.sub">Exactly how community capital is planned to be spent.</p>
           </header>
           <div class="fund-pie" data-fund-pie>
@@ -421,7 +353,7 @@
           </article>
         </div>
         <div class="honesty card" data-reveal>
-          <h3 data-i18n="token.honestTitle">Day-1 honesty</h3>
+          <h3 data-i18n="token.honestTitle">Token honesty</h3>
           <p data-i18n="token.honestBody">
             At token launch on pump.fun, $MERLAT is primarily a fundraising + community coordination token. Core product utilities (fee discount, governance, staking/fee share) are <strong>roadmap</strong>, not live day one. We will label what ships at each milestone. Buying the token is speculative and risky.
           </p>
@@ -464,7 +396,7 @@
           <div>
             <span class="eyebrow eyebrow--on-dark" data-i18n="cta.eyebrow">Join the raise</span>
             <h2 data-i18n="cta.title">Build with us</h2>
-            <p data-i18n="cta.sub">Soft raise $50K–$100K on pump.fun. Thesis-backed. Risk disclosed.</p>
+            <p data-i18n="cta.sub">Thesis-backed raise on pump.fun. Risk disclosed.</p>
           </div>
           <div class="cta-final__actions">
             <a class="btn btn--primary btn--lg" href="{{PUMPFUN_URL}}" data-i18n="cta.buy">Buy $MERLAT on pump.fun</a>

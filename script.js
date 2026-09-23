@@ -14,7 +14,7 @@
       "cta.buy": "Buy $MERLAT on pump.fun",
       "cta.email": "Email",
       "cta.eyebrow": "Join the raise",
-      "cta.sub": "Soft raise $50K–$100K on pump.fun. Thesis-backed. Risk disclosed.",
+      "cta.sub": "Thesis-backed raise on pump.fun. Risk disclosed.",
       "cta.telegram": "Telegram",
       "cta.title": "Build with us",
       "cta.twitter": "Twitter / X",
@@ -160,7 +160,7 @@
       "token.contract": "Contract",
       "token.eyebrow": "$MERLAT · serious utilities",
       "token.honestBody": "At token launch on pump.fun, $MERLAT is primarily a fundraising + community coordination token. Core product utilities (fee discount, governance, staking/fee share) are roadmap, not live day one. We will label what ships at each milestone. Buying the token is speculative and risky.",
-      "token.honestTitle": "Day-1 honesty",
+      "token.honestTitle": "Token honesty",
       "token.planned": "Planned",
       "token.roadmap": "Roadmap",
       "token.sub": "No moon-speak. What the token is for — and what ships when.",
@@ -185,7 +185,7 @@
       "cta.buy": "Comprar $MERLAT en pump.fun",
       "cta.email": "Email",
       "cta.eyebrow": "Únete a la ronda",
-      "cta.sub": "Meta suave $50K–$100K en pump.fun. Con tesis. Con riesgos claros.",
+      "cta.sub": "Raise con tesis en pump.fun. Riesgo divulgado.",
       "cta.telegram": "Telegram",
       "cta.title": "Construye con nosotros",
       "cta.twitter": "Twitter / X",
@@ -331,7 +331,7 @@
       "token.contract": "Contrato",
       "token.eyebrow": "$MERLAT · utilidades serias",
       "token.honestBody": "Al lanzar el token en pump.fun, $MERLAT es principalmente un token de fundraising + coordinación comunitaria. Las utilidades de producto (descuento de fees, gobernanza, staking/fee share) están en roadmap, no vivas el día uno. Etiquetaremos qué se entrega en cada hito. Comprar el token es especulativo y riesgoso.",
-      "token.honestTitle": "Honestidad día 1",
+      "token.honestTitle": "Honestidad del token",
       "token.planned": "Planificado",
       "token.roadmap": "Roadmap",
       "token.sub": "Sin moon-speak. Para qué sirve el token — y qué se entrega cuándo.",
@@ -681,7 +681,7 @@
       return;
     }
 
-    var trigger = root;
+    var trigger = root.closest(".raise-funds") || root;
     if (!("IntersectionObserver" in window)) {
       draw();
       return;
