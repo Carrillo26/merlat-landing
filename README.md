@@ -6,11 +6,13 @@ LATAM-first prediction market fundraising page for **US memecoin / pump.fun trad
 
 ## Live site
 
-GitHub Pages deploys this static site from branch **`main`**, folder **`/`** (repository root), so `index.html` is served at `/`.
-
 **https://carrillo26.github.io/merlat-landing/**
 
-Phone-friendly: the page uses a mobile viewport, a burger nav under 960px, and stacked sections. Open that URL on a phone after Pages finishes its first build (often 1–2 minutes).
+GitHub Pages source: **Deploy from a branch** → branch **`main`** → folder **`/`** (repository root), so `index.html` is served at `/`.
+
+Repo → **Settings** → **Pages** → Build and deployment → Source **Deploy from a branch** → Branch **`main`** / **`/ (root)`** → Save. The first build often takes 1–2 minutes.
+
+Phone-friendly: the page uses a mobile viewport, a burger nav under 960px, and stacked sections.
 
 ## Preview
 
