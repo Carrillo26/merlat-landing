@@ -93,7 +93,7 @@
       "markets.catPolitics": "Política",
       "markets.catSports": "Fútbol",
       "markets.eyebrow": "Illustrative · not live",
-      "markets.login": "Log in",
+      "markets.login": "Entrar",
       "markets.m1count": "3 mercados",
       "markets.m1o1": "Brasil",
       "markets.m1o2": "Argentina",
@@ -106,18 +106,18 @@
       "markets.m3count": "2 mercados",
       "markets.m3q": "¿La coalición gobernante de México retiene la presidencia en 2030?",
       "markets.m3vol": "$128k vol",
-      "markets.navLive": "Live",
-      "markets.navPredict": "Predict",
-      "markets.navSearch": "Search",
+      "markets.navLive": "En vivo",
+      "markets.navPredict": "Predecir",
+      "markets.navSearch": "Buscar",
       "markets.navSocial": "Social",
       "markets.no": "No",
       "markets.note": "Illustrative layouts for storytelling. They are not tradable markets and do not reflect real odds or liquidity.",
-      "markets.signup": "Sign up",
+      "markets.signup": "Registrarse",
       "markets.sub": "Football, inflation, elections — the questions people already argue about in Spanish and Portuguese. Percentages below are mock UI only.",
       "markets.tabMacro": "Macro",
-      "markets.tabPolitics": "Politics",
-      "markets.tabSports": "Sports",
-      "markets.tabTrending": "Trending",
+      "markets.tabPolitics": "Política",
+      "markets.tabSports": "Deportes",
+      "markets.tabTrending": "Tendencias",
       "markets.title": "Product preview",
       "markets.yes": "Sí",
       "nav.cta": "Buy $MERLAT",
@@ -372,6 +372,8 @@
     document.documentElement.lang = lang;
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      // App mock = LATAM product UI: always Spanish, even on EN page
+      if (el.closest(".app-mock")) return;
       var key = el.getAttribute("data-i18n");
       if (!key || dict[key] == null) return;
       var text = dict[key];
