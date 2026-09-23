@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Merlat — LATAM-first prediction markets. Community raise for a real product thesis, not just another memecoin." />
+  <meta name="theme-color" content="#F4F3ED" />
+  <title>Merlat — LATAM Prediction Markets | $MERLAT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>document.documentElement.classList.add("js");</script>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to content</a>
+
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="#top" aria-label="Merlat home">
+        <img src="assets/logo.svg" alt="" width="32" height="32" data-placeholder="{{LOGO_PATH}}" />
+        <span>Merlat</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features" data-i18n="nav.how">How it works</a>
+        <a href="#product" data-i18n="nav.markets">Markets</a>
+        <a href="#latam" data-i18n="nav.latam">Why LATAM</a>
+        <a href="#raise" data-i18n="nav.raise">The raise</a>
+        <a href="#token" data-i18n="nav.token">Token</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-toggle__btn is-active" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="lang-toggle__btn" data-set-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <a class="btn btn--primary btn--sm" href="{{PUMPFUN_URL}}" data-i18n="nav.cta">Buy $MERLAT</a>
+        <button type="button" class="nav__burger" id="navBurger" aria-expanded="false" aria-controls="mobileNav" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" hidden aria-label="Mobile">
+      <a href="#features" data-i18n="nav.how">How it works</a>
+      <a href="#product" data-i18n="nav.markets">Markets</a>
+      <a href="#latam" data-i18n="nav.latam">Why LATAM</a>
+      <a href="#raise" data-i18n="nav.raise">The raise</a>
+      <a href="#funds" data-i18n="nav.funds">Use of funds</a>
+      <a href="#token" data-i18n="nav.token">Token</a>
+      <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a class="btn btn--primary" href="{{PUMPFUN_URL}}" data-i18n="nav.cta">Buy $MERLAT</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO + STATS -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero__grid">
+          <div class="hero__copy" data-reveal>
+            <span class="eyebrow" data-i18n="hero.eyebrow">LATAM-first prediction · Community raise</span>
+            <h1 data-i18n="hero.title">Not just another memecoin. A LATAM prediction market thesis.</h1>
+            <p class="hero__lead" data-i18n="hero.lead">
+              Polymarket owns English-speaking crypto. Merlat is building the product thesis for Spanish &amp; Portuguese speakers: local markets, native UX, and local payment rails on the roadmap — not a cartoon logo with zero business.
+            </p>
+            <div class="hero__ctas">
+              <a class="btn btn--primary btn--lg" href="{{PUMPFUN_URL}}" data-i18n="hero.ctaBuy">Buy $MERLAT</a>
+              <a class="btn btn--ghost btn--lg" href="#features" data-i18n="hero.ctaHow">See how it works</a>
+            </div>
+            <p class="hero__note" data-i18n="hero.cardNote">No fake TVL. No fake licenses. Product first.</p>
+          </div>
+          <div class="hero__visual" aria-hidden="true" data-reveal>
+            <div class="hero-card">
+              <div class="hero-card__row">
+                <span data-i18n="hero.stat1label">Demand today</span>
+                <strong data-i18n="hero.stat1short">Leaks to Polymarket</strong>
+              </div>
+              <div class="hero-card__row hero-card__row--accent">
+                <span data-i18n="hero.stat2label">Merlat wedge</span>
+                <strong data-i18n="hero.stat2short">Local · ES/PT · rails</strong>
+              </div>
+              <div class="hero-card__row">
+                <span data-i18n="hero.stat3label">Token role</span>
+                <strong data-i18n="hero.stat3short">Fees · gov · stake</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-row" role="list" data-reveal-stagger>
+          <div class="stat" role="listitem">
+            <span class="stat__label" data-i18n="hero.proof1label">Soft raise</span>
+            <p class="stat__value">$50–100<span>K</span></p>
+            <p class="stat__hint" data-i18n="hero.proof1">Soft raise $50K–$100K</p>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat__label" data-i18n="hero.proof2label">Product focus</span>
+            <p class="stat__value">ES/PT</p>
+            <p class="stat__hint" data-i18n="hero.proof2">ES / PT product focus</p>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat__label" data-i18n="hero.proof3label">Product build</span>
+            <p class="stat__value">35<span>%</span></p>
+            <p class="stat__hint" data-i18n="funds.product">Product</p>
+          </div>
+          <div class="stat" role="listitem">
+            <span class="stat__label" data-i18n="hero.proof4label">Honesty</span>
+            <p class="stat__value" data-i18n="hero.proof4value">Day-1</p>
+            <p class="stat__hint" data-i18n="hero.proof3">Honest token utilities</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES / HOW IT WORKS -->
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <span class="eyebrow" data-i18n="how.eyebrow">Simple model</span>
+          <h2 data-i18n="how.title">How Merlat works</h2>
+          <p data-i18n="how.sub">Peer pools, not a house book. Transparent outcomes. Small fee on winning payouts.</p>
+        </header>
+        <div class="feature-grid" data-reveal-stagger>
+          <article class="card feature-card">
+            <div class="feature-card__icon" aria-hidden="true">01</div>
+            <h3 data-i18n="how.s1t">Predict</h3>
+            <p data-i18n="how.s1d">Pick Yes or No on markets that matter in LATAM — sports, macro, culture, politics. Clear rules before you enter.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-card__icon" aria-hidden="true">02</div>
+            <h3 data-i18n="how.s2t">Transparent pools</h3>
+            <p data-i18n="how.s2d">Capital sits in open pools. Winners take the opposing side when the market resolves — you trade against users, not a house edge.</p>
+          </article>
+          <article class="card feature-card">
+            <div class="feature-card__icon" aria-hidden="true">03</div>
+            <h3 data-i18n="how.s3t">Small fee</h3>
+            <p data-i18n="how.s3d">Merlat takes a modest cut of winning payouts. Predictable revenue. No opaque vig. Token holders may get fee discounts (see utilities).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT PREVIEW -->
+    <section class="section section--muted" id="product">
+      <div class="container product-layout">
+        <div class="product-layout__copy" data-reveal>
+          <span class="eyebrow" data-i18n="markets.eyebrow">Illustrative · not live</span>
+          <h2 data-i18n="markets.title">Product preview</h2>
+          <p data-i18n="markets.sub">
+            Football, inflation, elections — the questions people already argue about in Spanish and Portuguese. Percentages below are mock UI only.
+          </p>
+          <ul class="check-list">
+            <li data-i18n="markets.bullet1">Spanish market cards inside the app</li>
+            <li data-i18n="markets.bullet2">Sports, macro, and politics categories</li>
+            <li data-i18n="markets.bullet3">Labeled examples — not live odds</li>
+          </ul>
+          <p class="section-note" data-i18n="markets.note">Illustrative layouts for storytelling. They are not tradable markets and do not reflect real odds or liquidity.</p>
+        </div>
+
+        <div class="markets-stage" data-reveal>
+          <figure class="device" aria-label="Merlat app mockup">
+            <div class="device__chrome" aria-hidden="true">
+              <span class="device__speaker"></span>
+              <span class="device__camera"></span>
+            </div>
+            <div class="app-mock" role="img" aria-label="Merlat prediction markets app UI">
+              <header class="app-mock__bar">
+                <span class="app-mock__brand">Merlat</span>
+                <div class="app-mock__actions">
+                  <span class="app-mock__btn app-mock__btn--ghost" data-i18n="markets.login">Log in</span>
+                  <span class="app-mock__btn app-mock__btn--solid" data-i18n="markets.signup">Sign up</span>
+                </div>
+              </header>
+              <nav class="app-mock__tabs" aria-hidden="true">
+                <span class="app-mock__tab is-active" data-i18n="markets.tabTrending">Trending</span>
+                <span class="app-mock__tab" data-i18n="markets.tabSports">Sports</span>
+                <span class="app-mock__tab" data-i18n="markets.tabMacro">Macro</span>
+                <span class="app-mock__tab" data-i18n="markets.tabPolitics">Politics</span>
+              </nav>
+              <div class="app-mock__signal" aria-hidden="true">
+                <span class="app-mock__signal-dot"></span>
+                <span class="app-mock__signal-text" id="appSignalText">Señal · Copa América en tendencia</span>
+              </div>
+              <div class="app-mock__feed">
+                <article class="app-card is-highlight">
+                  <div class="app-card__cat">
+                    <span class="app-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3c2.5 2.5 2.5 15.5 0 18M3 12h18M5.5 6.5c3 2 10 2 13 0M5.5 17.5c3-2 10-2 13 0"/></svg>
+                    </span>
+                    <span class="app-card__cat-label" data-i18n="markets.catSports">Fútbol</span>
+                  </div>
+                  <h3 class="app-card__q" data-i18n="markets.m1q">¿Ganador Copa América 2028?</h3>
+                  <ul class="app-card__opts">
+                    <li class="app-opt">
+                      <div class="app-opt__row">
+                        <span class="app-opt__label" data-i18n="markets.m1o1">Brasil</span>
+                        <span class="app-opt__mult">2.38x</span>
+                        <span class="app-opt__pill">42%</span>
+                      </div>
+                      <div class="app-opt__bar" aria-hidden="true"><i style="width:42%"></i></div>
+                    </li>
+                    <li class="app-opt">
+                      <div class="app-opt__row">
+                        <span class="app-opt__label" data-i18n="markets.m1o2">Argentina</span>
+                        <span class="app-opt__mult">3.23x</span>
+                        <span class="app-opt__pill">31%</span>
+                      </div>
+                      <div class="app-opt__bar" aria-hidden="true"><i style="width:31%"></i></div>
+                    </li>
+                    <li class="app-opt">
+                      <div class="app-opt__row">
+                        <span class="app-opt__label" data-i18n="markets.m1o3">Otro</span>
+                        <span class="app-opt__mult">3.70x</span>
+                        <span class="app-opt__pill">27%</span>
+                      </div>
+                      <div class="app-opt__bar" aria-hidden="true"><i style="width:27%"></i></div>
+                    </li>
+                  </ul>
+                  <footer class="app-card__foot">
+                    <span data-i18n="markets.m1vol">$184k vol</span>
+                    <span data-i18n="markets.m1count">3 mercados</span>
+                  </footer>
+                </article>
+                <article class="app-card">
+                  <div class="app-card__cat">
+                    <span class="app-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19V5M4 19h16"/><path d="M8 15v-4M12 15V8M16 15v-7"/></svg>
+                    </span>
+                    <span class="app-card__cat-label" data-i18n="markets.catMacro">Macro</span>
+                  </div>
+                  <h3 class="app-card__q" data-i18n="markets.m2q">¿La inflación de Argentina se mantiene sobre 30% interanual hasta 2027?</h3>
+                  <ul class="app-card__opts">
+                    <li class="app-opt">
+                      <div class="app-opt__row">
+                        <span class="app-opt__label" data-i18n="markets.yes">Sí</span>
+                        <span class="app-opt__mult">1.82x</span>
+                        <span class="app-opt__pill">55%</span>
+                      </div>
+                      <div class="app-opt__bar" aria-hidden="true"><i style="width:55%"></i></div>
+                    </li>
+                    <li class="app-opt">
+                      <div class="app-opt__row">
+                        <span class="app-opt__label" data-i18n="markets.no">No</span>
+                        <span class="app-opt__mult">2.22x</span>
+                        <span class="app-opt__pill">45%</span>
+                      </div>
+                      <div class="app-opt__bar" aria-hidden="true"><i style="width:45%"></i></div>
+                    </li>
+                  </ul>
+                  <footer class="app-card__foot">
+                    <span data-i18n="markets.m2vol">$295k vol</span>
+                    <span data-i18n="markets.m2count">1 mercado</span>
+                  </footer>
+                </article>
+                <article class="app-card">
+                  <div class="app-card__cat">
+                    <span class="app-card__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M6 20V10l6-4 6 4v10"/><path d="M10 20v-5h4v5"/></svg>
+                    </span>
+                    <span class="app-card__cat-label" data-i18n="markets.catPolitics">Política</span>
+                  </div>
+                  <h3 class="app-card__q" data-i18n="markets.m3q">¿La coalición gobernante de México retiene la presidencia en 2030?</h3>
+                  <ul class="app-card__opts">
+                    <li class="app-opt">
+                      <div class="app-opt__row">
+                        <span class="app-opt__label" data-i18n="markets.yes">Sí</span>
+                        <span class="app-opt__mult">2.08x</span>
+                        <span class="app-opt__pill">48%</span>
+                      </div>
+                      <div class="app-opt__bar" aria-hidden="true"><i style="width:48%"></i></div>
+                    </li>
+                    <li class="app-opt">
+                      <div class="app-opt__row">
+                        <span class="app-opt__label" data-i18n="markets.no">No</span>
+                        <span class="app-opt__mult">1.92x</span>
+                        <span class="app-opt__pill">52%</span>
+                      </div>
+                      <div class="app-opt__bar" aria-hidden="true"><i style="width:52%"></i></div>
+                    </li>
+                  </ul>
+                  <footer class="app-card__foot">
+                    <span data-i18n="markets.m3vol">$128k vol</span>
+                    <span data-i18n="markets.m3count">2 mercados</span>
+                  </footer>
+                </article>
+              </div>
+              <nav class="app-mock__dock" aria-hidden="true">
+                <span class="app-dock__item is-active">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M4 19V5h2v14H4zm5-8v8h2v-8H9zm5-4v12h2V7h-2zm5 6v6h2v-6h-2z"/></svg>
+                  <span data-i18n="markets.navPredict">Predict</span>
+                </span>
+                <span class="app-dock__item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+                  <span data-i18n="markets.navLive">Live</span>
+                </span>
+                <span class="app-dock__item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.5-3.5"/></svg>
+                  <span data-i18n="markets.navSearch">Search</span>
+                </span>
+                <span class="app-dock__item">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 14s1.5 2 4 2 4-2 4-2"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><circle cx="12" cy="12" r="9"/></svg>
+                  <span data-i18n="markets.navSocial">Social</span>
+                </span>
+              </nav>
+            </div>
+            <div class="device__home" aria-hidden="true"></div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY LATAM + TRUST -->
+    <section class="section" id="latam">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <span class="eyebrow" data-i18n="latam.eyebrow">The gap</span>
+          <h2 data-i18n="latam.title">Why LATAM</h2>
+          <p data-i18n="latam.sub">Demand already exists. The friction is language, rails, and local market depth — not interest.</p>
+        </header>
+        <div class="split-cards" data-reveal-stagger>
+          <article class="card">
+            <h3 data-i18n="latam.problemTitle">The problem</h3>
+            <ul class="bullet-list">
+              <li data-i18n="latam.p1">Polymarket is English-first; UX and support feel foreign</li>
+              <li data-i18n="latam.p2">On-ramps and payouts ignore PIX, SPEI, Mercado Pago, local cards</li>
+              <li data-i18n="latam.p3">Thin coverage of regional events people actually care about</li>
+              <li data-i18n="latam.p4">Trust &amp; compliance expectations differ by country — copy-paste US UX fails</li>
+            </ul>
+          </article>
+          <article class="card card--accent">
+            <h3 data-i18n="latam.oppTitle">The opportunity</h3>
+            <ul class="bullet-list">
+              <li data-i18n="latam.o1">Native ES/PT product — not a machine-translated afterthought</li>
+              <li data-i18n="latam.o2">Local market catalog: football, elections, FX/inflation, culture</li>
+              <li data-i18n="latam.o3">Payment rails roadmap: meet users where they already pay</li>
+              <li data-i18n="latam.o4">Capture share of demand that currently leaks north to Polymarket</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="trust-strip" id="trust" data-reveal>
+          <header class="trust-strip__head">
+            <span class="eyebrow" data-i18n="trust.eyebrow">Trust &amp; security posture</span>
+            <h3 data-i18n="trust.title">Built to be honest before it is big</h3>
+          </header>
+          <div class="trust-grid" data-reveal-stagger>
+            <div class="trust-item">
+              <strong data-i18n="trust.t1t">No fake claims</strong>
+              <p data-i18n="trust.t1d">No invented TVL, licenses, or partnerships. Soft raise only.</p>
+            </div>
+            <div class="trust-item">
+              <strong data-i18n="trust.t2t">Compliance track</strong>
+              <p data-i18n="trust.t2d">25% of funds reserved for legal / compliance review by jurisdiction.</p>
+            </div>
+            <div class="trust-item">
+              <strong data-i18n="trust.t3t">Labeled utilities</strong>
+              <p data-i18n="trust.t3d">Planned vs roadmap clearly tagged. Day-1 = fundraising + coordination.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RAISE -->
+    <section class="section section--dark" id="raise">
+      <div class="container">
+        <header class="section-head section-head--on-dark" data-reveal>
+          <span class="eyebrow eyebrow--on-dark" data-i18n="raise.eyebrow">Community raise · pump.fun</span>
+          <h2 data-i18n="raise.title">The raise</h2>
+          <p data-i18n="raise.sub">Soft goal: $50K–$100K USD. Enough to ship product, not theater.</p>
+        </header>
+        <div class="raise-grid" data-reveal-stagger>
+          <div class="raise-figure card card--on-dark">
+            <span class="eyebrow eyebrow--on-dark" data-i18n="raise.soft">Soft raise goal</span>
+            <p class="raise-figure__num">$50K–$100K</p>
+            <span class="raise-figure__hint" data-i18n="raise.usd">USD · community raise via pump.fun</span>
+          </div>
+          <div class="raise-why">
+            <h3 data-i18n="raise.whyTitle">Why now</h3>
+            <ul class="bullet-list bullet-list--on-dark">
+              <li data-i18n="raise.w1">Prediction markets are mainstream — LATAM still underserved</li>
+              <li data-i18n="raise.w2">Memecoin traders want a thesis beyond “number go up”</li>
+              <li data-i18n="raise.w3">Small raise keeps focus on MVP + compliance track, not burn</li>
+            </ul>
+            <p class="section-note section-note--on-dark" data-i18n="raise.honest">We are not claiming a completed license, live real-money ops in Brazil, or any partnership we have not signed. Capital funds the build.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- USE OF FUNDS -->
+    <section class="section" id="funds">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <span class="eyebrow" data-i18n="funds.eyebrow">Locked allocation</span>
+          <h2 data-i18n="funds.title">Use of funds</h2>
+          <p data-i18n="funds.sub">Exactly how community capital is planned to be spent.</p>
+        </header>
+        <ul class="fund-list" data-reveal-stagger>
+          <li class="fund-item fund-item--accent">
+            <div class="fund-item__meta">
+              <span data-i18n="funds.product">Product</span>
+              <strong>35%</strong>
+            </div>
+            <div class="fund-item__bar"><i style="width:35%"></i></div>
+          </li>
+          <li class="fund-item">
+            <div class="fund-item__meta">
+              <span data-i18n="funds.legal">Legal / compliance</span>
+              <strong>25%</strong>
+            </div>
+            <div class="fund-item__bar"><i style="width:25%"></i></div>
+          </li>
+          <li class="fund-item">
+            <div class="fund-item__meta">
+              <span data-i18n="funds.marketing">Marketing</span>
+              <strong>20%</strong>
+            </div>
+            <div class="fund-item__bar"><i style="width:20%"></i></div>
+          </li>
+          <li class="fund-item">
+            <div class="fund-item__meta">
+              <span data-i18n="funds.liquidity">Liquidity / token</span>
+              <strong>15%</strong>
+            </div>
+            <div class="fund-item__bar"><i style="width:15%"></i></div>
+          </li>
+          <li class="fund-item">
+            <div class="fund-item__meta">
+              <span data-i18n="funds.ops">Ops</span>
+              <strong>5%</strong>
+            </div>
+            <div class="fund-item__bar"><i style="width:5%"></i></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TOKEN -->
+    <section class="section section--muted" id="token">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <span class="eyebrow" data-i18n="token.eyebrow">$MERLAT · serious utilities</span>
+          <h2 data-i18n="token.title">Token utility</h2>
+          <p data-i18n="token.sub">No moon-speak. What the token is for — and what ships when.</p>
+        </header>
+        <div class="feature-grid" data-reveal-stagger>
+          <article class="card">
+            <div class="card__topline">
+              <h3 data-i18n="token.u1t">Fee discount</h3>
+              <span class="badge" data-i18n="token.planned">Planned</span>
+            </div>
+            <p data-i18n="token.u1d">Hold or stake $MERLAT to reduce trading / payout fees on Merlat markets. Exact tiers publish with product launch.</p>
+          </article>
+          <article class="card">
+            <div class="card__topline">
+              <h3 data-i18n="token.u2t">Governance / voting</h3>
+              <span class="badge" data-i18n="token.planned">Planned</span>
+            </div>
+            <p data-i18n="token.u2d">Signal on market categories, fee parameters, and roadmap priorities. Not a promise of securities-style control — product governance.</p>
+          </article>
+          <article class="card">
+            <div class="card__topline">
+              <h3 data-i18n="token.u3t">Staking or fee share</h3>
+              <span class="badge badge--muted" data-i18n="token.roadmap">Roadmap</span>
+            </div>
+            <p data-i18n="token.u3d">Explore staking and/or a share of protocol fees for long-term holders — subject to legal review and jurisdiction rules.</p>
+          </article>
+        </div>
+        <div class="honesty card" data-reveal>
+          <h3 data-i18n="token.honestTitle">Day-1 honesty</h3>
+          <p data-i18n="token.honestBody">
+            At token launch on pump.fun, $MERLAT is primarily a fundraising + community coordination token. Core product utilities (fee discount, governance, staking/fee share) are <strong>roadmap</strong>, not live day one. We will label what ships at each milestone. Buying the token is speculative and risky.
+          </p>
+          <p class="contract">
+            <span class="eyebrow" data-i18n="token.contract">Contract</span>
+            <code>{{CONTRACT_ADDRESS}}</code>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP -->
+    <section class="section" id="roadmap">
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <span class="eyebrow" data-i18n="roadmap.eyebrow">6–12 months</span>
+          <h2 data-i18n="roadmap.title">Roadmap</h2>
+          <p data-i18n="roadmap.sub">Sensible sequence. Dates are targets, not guarantees.</p>
+        </header>
+        <ol class="roadmap" data-reveal-stagger>
+          <li class="card">
+            <span class="roadmap__phase" data-i18n="roadmap.p1phase">Now</span>
+            <h3 data-i18n="roadmap.p1t">Landing + token</h3>
+            <p data-i18n="roadmap.p1d">This site, community channels, pump.fun raise, clear thesis for traders.</p>
+          </li>
+          <li class="card">
+            <span class="roadmap__phase" data-i18n="roadmap.p2phase">Next</span>
+            <h3 data-i18n="roadmap.p2t">Community</h3>
+            <p data-i18n="roadmap.p2d">Grow holders &amp; LATAM contributors; gather market ideas; open waitlist.</p>
+          </li>
+          <li class="card card--accent">
+            <span class="roadmap__phase" data-i18n="roadmap.p3phase">MVP</span>
+            <h3 data-i18n="roadmap.p3t">Waitlist / play or early product</h3>
+            <p data-i18n="roadmap.p3d">Ship a constrained MVP — paper/play mode or early product — so users can feel Merlat before full rails.</p>
+          </li>
+          <li class="card">
+            <span class="roadmap__phase" data-i18n="roadmap.p4phase">Track</span>
+            <h3 data-i18n="roadmap.p4t">Payments &amp; compliance</h3>
+            <p data-i18n="roadmap.p4d">Legal review by jurisdiction; explore local payment rails. No claim of licensed real-money ops until true.</p>
+          </li>
+          <li class="card">
+            <span class="roadmap__phase" data-i18n="roadmap.p5phase">Later</span>
+            <h3 data-i18n="roadmap.p5t">Expansion</h3>
+            <p data-i18n="roadmap.p5d">Deeper market catalog, PT-first Brazil track where allowed, token utilities going live as labeled.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section--muted" id="faq">
+      <div class="container container--narrow">
+        <header class="section-head section-head--center" data-reveal>
+          <span class="eyebrow" data-i18n="faq.eyebrow">Questions</span>
+          <h2 data-i18n="faq.title">FAQ</h2>
+        </header>
+        <div class="faq" data-reveal-stagger>
+          <details class="faq__item card">
+            <summary data-i18n="faq.q1">Is Merlat a memecoin?</summary>
+            <p data-i18n="faq.a1">$MERLAT launches on pump.fun as a community raise token. The thesis is a LATAM prediction market product — not a cartoon with zero business. Day-1 utility is fundraising + coordination; product utilities are labeled Planned / Roadmap.</p>
+          </details>
+          <details class="faq__item card">
+            <summary data-i18n="faq.q2">How much are you raising?</summary>
+            <p data-i18n="faq.a2">Soft goal only: $50K–$100K USD via pump.fun. We do not publish a “raised” figure we have not achieved.</p>
+          </details>
+          <details class="faq__item card">
+            <summary data-i18n="faq.q3">Are you licensed in Brazil?</summary>
+            <p data-i18n="faq.a3">No. Merlat does not claim licensed real-money operations in Brazil or elsewhere unless explicitly stated after counsel review. Compliance is a funded workstream (25%).</p>
+          </details>
+          <details class="faq__item card">
+            <summary data-i18n="faq.q4">What do the market cards show?</summary>
+            <p data-i18n="faq.a4">Illustrative UI only — Spanish LATAM examples (football, macro, politics). Not tradable markets and not real odds or liquidity.</p>
+          </details>
+          <details class="faq__item card">
+            <summary data-i18n="faq.q5">What does $MERLAT do on day one?</summary>
+            <p data-i18n="faq.a5">Primarily fundraising and community coordination. Fee discount and governance are Planned; staking / fee share is Roadmap — subject to legal review.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section section--dark cta-final" id="buy">
+      <div class="container">
+        <div class="cta-final__inner" data-reveal>
+          <div>
+            <span class="eyebrow eyebrow--on-dark" data-i18n="cta.eyebrow">Join the raise</span>
+            <h2 data-i18n="cta.title">Build with us</h2>
+            <p data-i18n="cta.sub">Soft raise $50K–$100K on pump.fun. Thesis-backed. Risk disclosed.</p>
+          </div>
+          <div class="cta-final__actions">
+            <a class="btn btn--primary btn--lg" href="{{PUMPFUN_URL}}" data-i18n="cta.buy">Buy $MERLAT on pump.fun</a>
+            <div class="socials">
+              <a href="{{TWITTER_URL}}" data-i18n="cta.twitter">Twitter / X</a>
+              <a href="{{TELEGRAM_URL}}" data-i18n="cta.telegram">Telegram</a>
+              <a href="mailto:{{EMAIL}}" data-i18n="cta.email">Email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img src="assets/logo.svg" alt="" width="28" height="28" data-placeholder="{{LOGO_PATH}}" />
+        <span>Merlat</span>
+      </div>
+      <div class="footer__disclaimers">
+        <p data-i18n="footer.d1"><strong>Crypto risk:</strong> Digital assets are highly volatile. You can lose all capital. Past performance is not indicative of future results.</p>
+        <p data-i18n="footer.d2"><strong>Not financial advice:</strong> Nothing on this site is an offer, solicitation, or recommendation to buy or sell any asset.</p>
+        <p data-i18n="footer.d3"><strong>Availability:</strong> Not available where prohibited. Users are responsible for complying with local law.</p>
+        <p data-i18n="footer.d4"><strong>LATAM regulatory uncertainty:</strong> Prediction markets and related tokens face evolving rules across jurisdictions. Merlat does not claim licensed real-money operations in Brazil or elsewhere unless explicitly stated after counsel review.</p>
+        <p data-i18n="footer.d5">Illustrative markets and percentages are mockups only. Placeholders like {{PUMPFUN_URL}} must be replaced before public launch.</p>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> Merlat. <span data-i18n="footer.rights">All rights reserved.</span> · v2 FintechX fusion</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
