@@ -454,6 +454,65 @@ ul, ol {
   background: #ff8a80;
 }
 
+/* ——— Markets dotted globe background ——— */
+.section--globe {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  /* Señal paper + soft charcoal bloom behind phone/globe */
+  background:
+    radial-gradient(ellipse 70% 65% at 74% 50%, rgba(0, 0, 0, 0.18), transparent 58%),
+    rgba(255, 255, 255, 0.45);
+}
+.markets-globe {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+}
+.markets-globe::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  /* Soft paper vignette: keep left copy crisp; leave globe core clear for LATAM accent */
+  background:
+    radial-gradient(ellipse 50% 55% at 74% 52%, transparent 22%, rgba(244, 243, 237, 0.28) 55%, rgba(244, 243, 237, 0.85) 82%, rgba(244, 243, 237, 0.96) 100%),
+    linear-gradient(90deg, rgba(244, 243, 237, 0.94) 0%, rgba(244, 243, 237, 0.6) 20%, transparent 40%, transparent 82%, rgba(244, 243, 237, 0.5) 100%);
+  z-index: 1;
+}
+.markets-globe canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  z-index: 0;
+  transform: scale(1.2) translateX(18%);
+  transform-origin: 70% 50%;
+}
+@media (max-width: 899px) {
+  .markets-globe {
+    opacity: 0.55;
+  }
+  .markets-globe canvas {
+    transform: scale(1.45) translate(4%, 8%);
+    transform-origin: 50% 60%;
+  }
+}
+.section--globe > .product-layout {
+  position: relative;
+  z-index: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .markets-globe {
+    opacity: 0.38;
+  }
+}
+
 /* ——— Product layout + device mock ——— */
 .product-layout {
   display: grid;
