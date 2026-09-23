@@ -1,36 +1,53 @@
-# Merlat Landing v2 — FintechX Fusion
+# Merlat Landing
 
-LATAM-first prediction market fundraising page for **US memecoin / pump.fun traders**. English default + Spanish toggle. Soft community raise **$50K–$100K USD**.
+LATAM-first prediction market fundraising page for **US memecoin / pump.fun traders**. English is the default, with an **EN | ES** toggle (`localStorage` key `merlat-lang`). Soft community raise **$50K–$100K USD**.
 
-**Visual direction:** FintechX-style light premium SaaS layout × **Señal Editorial** palette (paper / ink / charcoal / `#E10600`). Distinct from v1 editorial brutalism.
+**Stack:** Next.js 15 App Router, TypeScript, Tailwind CSS. Visual direction is the FintechX-style light SaaS layout × **Señal Editorial** palette. Deploy target is **Vercel** (Hobby). The previous GitHub Pages static site is archived in `archive/github-pages/` and is not what Vercel serves.
 
-## Preview
+## Local development
 
 ```bash
-cd /workspace/merlat-landing-v2-fusion
-python3 -m http.server 8082
-# visit http://localhost:8082
+npm install
+npm run dev
 ```
 
-Or open `index.html` directly.
+Open [http://localhost:3000](http://localhost:3000).
 
-## Placeholders (replace before public launch)
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint
+```
 
-| Placeholder | Replace with |
+The phone mock stays in Spanish in both languages. Percentages inside it are illustrative UI, not live odds.
+
+## Deploy on Vercel (Hobby) — Carrillo26
+
+You have to import the GitHub repo in the Vercel dashboard. This repository cannot finish account linking for you.
+
+1. Sign in at [vercel.com](https://vercel.com) with the GitHub account that owns **Carrillo26/merlat-landing**.
+2. Choose **Add New… → Project** and **Import** `Carrillo26/merlat-landing`.
+3. Framework preset: **Next.js** (Vercel detects this). Root directory: the repository root. Build command: `npm run build`. Install command: `npm install`. Leave the output directory empty — this is not a static export.
+4. Plan: **Hobby**. No environment variables are required for the current placeholders.
+5. Click **Deploy**.
+
+After the Vercel URL is live, turn off GitHub Pages so the old static host does not compete with it:
+
+**GitHub → Settings → Pages → Build and deployment → Source: None.**
+
+## Placeholders
+
+Edit `lib/site.ts` before a public launch. Values are literal placeholders, not live links.
+
+| Constant | Replace with |
 |---|---|
-| `{{PUMPFUN_URL}}` | Live pump.fun coin URL |
-| `{{CONTRACT_ADDRESS}}` | Solana mint / contract |
-| `{{TWITTER_URL}}` | X/Twitter profile |
-| `{{TELEGRAM_URL}}` | Telegram invite |
-| `{{EMAIL}}` | Public contact email |
-| `{{LOGO_PATH}}` | Optional logo path (`assets/logo.svg`) |
+| `pumpfunUrl` (`{{PUMPFUN_URL}}`) | Live pump.fun coin URL |
+| `contractAddress` (`{{CONTRACT_ADDRESS}}`) | Solana mint / contract |
+| `twitterUrl` (`{{TWITTER_URL}}`) | X/Twitter profile |
+| `telegramUrl` (`{{TELEGRAM_URL}}`) | Telegram invite |
+| `email` (`{{EMAIL}}`) | Public contact email |
 
-Do **not** invent raised amounts, licenses, partnerships, or claim licensed real-money ops in Brazil.
-
-## Language
-
-- Default: **EN** · Toggle: **EN | ES** · `localStorage` key `merlat-lang`
-- Strings: `script.js` → `I18N.en` / `I18N.es`
+Do **not** invent raised amounts, licenses, TVL, partnerships, or claim licensed real-money operations in Brazil.
 
 ## Design tokens
 
@@ -40,9 +57,10 @@ Do **not** invent raised amounts, licenses, partnerships, or claim licensed real
 | Ink | `#121212` | Primary type |
 | Charcoal | `#2E2E2E` | Dark panels / final CTA |
 | Signal red | `#E10600` | Brand accent / CTAs |
-| White | `#FFFFFF` | Soft cards |
 | App teal | `#00C4B8` | **Phone mock only** |
-| Type | Plus Jakarta Sans | Clean SaaS (not Syne ALL-CAPS) |
+| Type | Plus Jakarta Sans | `next/font` |
+
+Tailwind theme colors: `paper`, `ink`, `charcoal`, `accent`, `app-teal`.
 
 ## Locked economics
 
@@ -50,18 +68,21 @@ Do **not** invent raised amounts, licenses, partnerships, or claim licensed real
 - Funds: **35% product · 25% legal · 20% marketing · 15% liquidity/token · 5% ops**
 - Utilities: fee discount · governance · staking/fee share (Planned / Roadmap)
 
-## Sections (slim · pump.fun traders)
+## Sections
 
-1. Nav · 2. Hero + stats · 3. Product preview (phone mock) · 4. Why LATAM · 5. Raise + use of funds · 6. Token · 7. FAQ (3) · 8. Final CTA · Footer disclaimers
+Nav, Hero, Markets (copy + Spanish phone mock), Why LATAM (verified stats, disclaimer, sources), Use of funds (donut draws on scroll), Token, FAQ (3), final CTA, footer disclaimers.
 
-Removed from main scroll: How it works / features · trust strip · 5-phase roadmap.
+The Markets section does **not** include a globe. A TODO in `components/sections/Markets.tsx` marks where an OriginKit Globe can be added later (`npx originkit add globe`). OriginKit is not installed — there is no API key yet.
 
-## Files
+## Project layout
 
-`index.html` · `styles.css` · `script.js` · `assets/logo.svg` · `VERSION.md` · this README
-
-See `VERSION.md` for v1 vs v2 relationship.
-
-## GitHub Pages
-
-Static site ready for project Pages: root `index.html`, relative `styles.css` / `script.js` / `assets/`. Replace `{{PLACEHOLDERS}}` before public launch. Do not invent raised amounts or licenses.
+```
+app/layout.tsx
+app/page.tsx
+app/globals.css
+components/sections/*
+components/ui/*
+lib/i18n.ts
+lib/site.ts
+public/logo.svg
+```
