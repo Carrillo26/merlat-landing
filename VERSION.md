@@ -6,7 +6,7 @@
 
 **v2 = FintechX structure × Señal Editorial colors.**
 
-- **Layout / UX:** Light premium fintech SaaS rhythm inspired by FintechX (Framer): hero + social-proof stats, soft feature cards, product/phone preview, trust strip, raise + funds, token, roadmap, FAQ, final CTA. Generous spacing, rounded white cards on paper ground — **not** Behance brutalist red slabs.
+- **Layout / UX:** Light premium fintech SaaS rhythm (FintechX-inspired) slimmed for pump.fun traders: hero + stats, product/phone preview, Why LATAM, combined raise + use of funds, token, short FAQ (3), final CTA. Features / trust strip / full roadmap removed from main scroll. Tight section padding (40px / 32px mobile). Rounded white cards on paper — **not** Behance brutalist red slabs.
 - **Palette (locked Señal Editorial):** paper `#F4F3ED`, ink `#121212`, charcoal `#2E2E2E`, accent red `#E10600`, white surfaces. App-mock teal `#00C4B8` **only** inside the product phone mock. No FintechX green/nature brand palette.
 - **Content:** Same Merlat locked plan as v1 — EN default + ES toggle, US pump.fun trader audience, soft raise $50K–$100K, funds 35/25/20/15/5, token utilities (fee discount / governance / staking), Spanish market cards in mock, `{{PLACEHOLDERS}}`, no fake licenses or raised amounts.
 

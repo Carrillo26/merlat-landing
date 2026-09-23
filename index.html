@@ -23,7 +23,6 @@
         <span>Merlat</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#features" data-i18n="nav.how">How it works</a>
         <a href="#product" data-i18n="nav.markets">Markets</a>
         <a href="#latam" data-i18n="nav.latam">Why LATAM</a>
         <a href="#raise" data-i18n="nav.raise">The raise</a>
@@ -42,13 +41,10 @@
       </div>
     </div>
     <nav class="mobile-nav" id="mobileNav" hidden aria-label="Mobile">
-      <a href="#features" data-i18n="nav.how">How it works</a>
       <a href="#product" data-i18n="nav.markets">Markets</a>
       <a href="#latam" data-i18n="nav.latam">Why LATAM</a>
       <a href="#raise" data-i18n="nav.raise">The raise</a>
-      <a href="#funds" data-i18n="nav.funds">Use of funds</a>
       <a href="#token" data-i18n="nav.token">Token</a>
-      <a href="#roadmap" data-i18n="nav.roadmap">Roadmap</a>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <a class="btn btn--primary" href="{{PUMPFUN_URL}}" data-i18n="nav.cta">Buy $MERLAT</a>
     </nav>
@@ -67,7 +63,7 @@
             </p>
             <div class="hero__ctas">
               <a class="btn btn--primary btn--lg" href="{{PUMPFUN_URL}}" data-i18n="hero.ctaBuy">Buy $MERLAT</a>
-              <a class="btn btn--ghost btn--lg" href="#features" data-i18n="hero.ctaHow">See how it works</a>
+              <a class="btn btn--ghost btn--lg" href="#product" data-i18n="hero.ctaHow">See markets</a>
             </div>
             <p class="hero__note" data-i18n="hero.cardNote">No fake TVL. No fake licenses. Product first.</p>
           </div>
@@ -110,34 +106,6 @@
             <p class="stat__value" data-i18n="hero.proof4value">Day-1</p>
             <p class="stat__hint" data-i18n="hero.proof3">Honest token utilities</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURES / HOW IT WORKS -->
-    <section class="section" id="features">
-      <div class="container">
-        <header class="section-head section-head--center" data-reveal>
-          <span class="eyebrow" data-i18n="how.eyebrow">Simple model</span>
-          <h2 data-i18n="how.title">How Merlat works</h2>
-          <p data-i18n="how.sub">Peer pools, not a house book. Transparent outcomes. Small fee on winning payouts.</p>
-        </header>
-        <div class="feature-grid" data-reveal-stagger>
-          <article class="card feature-card">
-            <div class="feature-card__icon" aria-hidden="true">01</div>
-            <h3 data-i18n="how.s1t">Predict</h3>
-            <p data-i18n="how.s1d">Pick Yes or No on markets that matter in LATAM — sports, macro, culture, politics. Clear rules before you enter.</p>
-          </article>
-          <article class="card feature-card">
-            <div class="feature-card__icon" aria-hidden="true">02</div>
-            <h3 data-i18n="how.s2t">Transparent pools</h3>
-            <p data-i18n="how.s2d">Capital sits in open pools. Winners take the opposing side when the market resolves — you trade against users, not a house edge.</p>
-          </article>
-          <article class="card feature-card">
-            <div class="feature-card__icon" aria-hidden="true">03</div>
-            <h3 data-i18n="how.s3t">Small fee</h3>
-            <p data-i18n="how.s3d">Merlat takes a modest cut of winning payouts. Predictable revenue. No opaque vig. Token holders may get fee discounts (see utilities).</p>
-          </article>
         </div>
       </div>
     </section>
@@ -311,7 +279,7 @@
       </div>
     </section>
 
-    <!-- WHY LATAM + TRUST -->
+    <!-- WHY LATAM -->
     <section class="section" id="latam">
       <div class="container">
         <header class="section-head section-head--center" data-reveal>
@@ -339,31 +307,10 @@
             </ul>
           </article>
         </div>
-
-        <div class="trust-strip" id="trust" data-reveal>
-          <header class="trust-strip__head">
-            <span class="eyebrow" data-i18n="trust.eyebrow">Trust &amp; security posture</span>
-            <h3 data-i18n="trust.title">Built to be honest before it is big</h3>
-          </header>
-          <div class="trust-grid" data-reveal-stagger>
-            <div class="trust-item">
-              <strong data-i18n="trust.t1t">No fake claims</strong>
-              <p data-i18n="trust.t1d">No invented TVL, licenses, or partnerships. Soft raise only.</p>
-            </div>
-            <div class="trust-item">
-              <strong data-i18n="trust.t2t">Compliance track</strong>
-              <p data-i18n="trust.t2d">25% of funds reserved for legal / compliance review by jurisdiction.</p>
-            </div>
-            <div class="trust-item">
-              <strong data-i18n="trust.t3t">Labeled utilities</strong>
-              <p data-i18n="trust.t3d">Planned vs roadmap clearly tagged. Day-1 = fundraising + coordination.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
-    <!-- RAISE -->
+    <!-- RAISE + USE OF FUNDS -->
     <section class="section section--dark" id="raise">
       <div class="container">
         <header class="section-head section-head--on-dark" data-reveal>
@@ -387,54 +334,51 @@
             <p class="section-note section-note--on-dark" data-i18n="raise.honest">We are not claiming a completed license, live real-money ops in Brazil, or any partnership we have not signed. Capital funds the build.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- USE OF FUNDS -->
-    <section class="section" id="funds">
-      <div class="container">
-        <header class="section-head section-head--center" data-reveal>
-          <span class="eyebrow" data-i18n="funds.eyebrow">Locked allocation</span>
-          <h2 data-i18n="funds.title">Use of funds</h2>
-          <p data-i18n="funds.sub">Exactly how community capital is planned to be spent.</p>
-        </header>
-        <ul class="fund-list" data-reveal-stagger>
-          <li class="fund-item fund-item--accent">
-            <div class="fund-item__meta">
-              <span data-i18n="funds.product">Product</span>
-              <strong>35%</strong>
-            </div>
-            <div class="fund-item__bar"><i style="width:35%"></i></div>
-          </li>
-          <li class="fund-item">
-            <div class="fund-item__meta">
-              <span data-i18n="funds.legal">Legal / compliance</span>
-              <strong>25%</strong>
-            </div>
-            <div class="fund-item__bar"><i style="width:25%"></i></div>
-          </li>
-          <li class="fund-item">
-            <div class="fund-item__meta">
-              <span data-i18n="funds.marketing">Marketing</span>
-              <strong>20%</strong>
-            </div>
-            <div class="fund-item__bar"><i style="width:20%"></i></div>
-          </li>
-          <li class="fund-item">
-            <div class="fund-item__meta">
-              <span data-i18n="funds.liquidity">Liquidity / token</span>
-              <strong>15%</strong>
-            </div>
-            <div class="fund-item__bar"><i style="width:15%"></i></div>
-          </li>
-          <li class="fund-item">
-            <div class="fund-item__meta">
-              <span data-i18n="funds.ops">Ops</span>
-              <strong>5%</strong>
-            </div>
-            <div class="fund-item__bar"><i style="width:5%"></i></div>
-          </li>
-        </ul>
+        <div class="raise-funds" data-reveal>
+          <header class="raise-funds__head">
+            <span class="eyebrow eyebrow--on-dark" data-i18n="funds.eyebrow">Locked allocation</span>
+            <h3 data-i18n="funds.title">Use of funds</h3>
+            <p data-i18n="funds.sub">Exactly how community capital is planned to be spent.</p>
+          </header>
+          <ul class="fund-list fund-list--on-dark" data-reveal-stagger>
+            <li class="fund-item fund-item--accent">
+              <div class="fund-item__meta">
+                <span data-i18n="funds.product">Product</span>
+                <strong>35%</strong>
+              </div>
+              <div class="fund-item__bar"><i style="width:35%"></i></div>
+            </li>
+            <li class="fund-item">
+              <div class="fund-item__meta">
+                <span data-i18n="funds.legal">Legal / compliance</span>
+                <strong>25%</strong>
+              </div>
+              <div class="fund-item__bar"><i style="width:25%"></i></div>
+            </li>
+            <li class="fund-item">
+              <div class="fund-item__meta">
+                <span data-i18n="funds.marketing">Marketing</span>
+                <strong>20%</strong>
+              </div>
+              <div class="fund-item__bar"><i style="width:20%"></i></div>
+            </li>
+            <li class="fund-item">
+              <div class="fund-item__meta">
+                <span data-i18n="funds.liquidity">Liquidity / token</span>
+                <strong>15%</strong>
+              </div>
+              <div class="fund-item__bar"><i style="width:15%"></i></div>
+            </li>
+            <li class="fund-item">
+              <div class="fund-item__meta">
+                <span data-i18n="funds.ops">Ops</span>
+                <strong>5%</strong>
+              </div>
+              <div class="fund-item__bar"><i style="width:5%"></i></div>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -482,44 +426,6 @@
       </div>
     </section>
 
-    <!-- ROADMAP -->
-    <section class="section" id="roadmap">
-      <div class="container">
-        <header class="section-head section-head--center" data-reveal>
-          <span class="eyebrow" data-i18n="roadmap.eyebrow">6–12 months</span>
-          <h2 data-i18n="roadmap.title">Roadmap</h2>
-          <p data-i18n="roadmap.sub">Sensible sequence. Dates are targets, not guarantees.</p>
-        </header>
-        <ol class="roadmap" data-reveal-stagger>
-          <li class="card">
-            <span class="roadmap__phase" data-i18n="roadmap.p1phase">Now</span>
-            <h3 data-i18n="roadmap.p1t">Landing + token</h3>
-            <p data-i18n="roadmap.p1d">This site, community channels, pump.fun raise, clear thesis for traders.</p>
-          </li>
-          <li class="card">
-            <span class="roadmap__phase" data-i18n="roadmap.p2phase">Next</span>
-            <h3 data-i18n="roadmap.p2t">Community</h3>
-            <p data-i18n="roadmap.p2d">Grow holders &amp; LATAM contributors; gather market ideas; open waitlist.</p>
-          </li>
-          <li class="card card--accent">
-            <span class="roadmap__phase" data-i18n="roadmap.p3phase">MVP</span>
-            <h3 data-i18n="roadmap.p3t">Waitlist / play or early product</h3>
-            <p data-i18n="roadmap.p3d">Ship a constrained MVP — paper/play mode or early product — so users can feel Merlat before full rails.</p>
-          </li>
-          <li class="card">
-            <span class="roadmap__phase" data-i18n="roadmap.p4phase">Track</span>
-            <h3 data-i18n="roadmap.p4t">Payments &amp; compliance</h3>
-            <p data-i18n="roadmap.p4d">Legal review by jurisdiction; explore local payment rails. No claim of licensed real-money ops until true.</p>
-          </li>
-          <li class="card">
-            <span class="roadmap__phase" data-i18n="roadmap.p5phase">Later</span>
-            <h3 data-i18n="roadmap.p5t">Expansion</h3>
-            <p data-i18n="roadmap.p5d">Deeper market catalog, PT-first Brazil track where allowed, token utilities going live as labeled.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section class="section section--muted" id="faq">
       <div class="container container--narrow">
@@ -529,20 +435,12 @@
         </header>
         <div class="faq" data-reveal-stagger>
           <details class="faq__item card">
-            <summary data-i18n="faq.q1">Is Merlat a memecoin?</summary>
-            <p data-i18n="faq.a1">$MERLAT launches on pump.fun as a community raise token. The thesis is a LATAM prediction market product — not a cartoon with zero business. Day-1 utility is fundraising + coordination; product utilities are labeled Planned / Roadmap.</p>
-          </details>
-          <details class="faq__item card">
             <summary data-i18n="faq.q2">How much are you raising?</summary>
             <p data-i18n="faq.a2">Soft goal only: $50K–$100K USD via pump.fun. We do not publish a “raised” figure we have not achieved.</p>
           </details>
           <details class="faq__item card">
             <summary data-i18n="faq.q3">Are you licensed in Brazil?</summary>
             <p data-i18n="faq.a3">No. Merlat does not claim licensed real-money operations in Brazil or elsewhere unless explicitly stated after counsel review. Compliance is a funded workstream (25%).</p>
-          </details>
-          <details class="faq__item card">
-            <summary data-i18n="faq.q4">What do the market cards show?</summary>
-            <p data-i18n="faq.a4">Illustrative UI only — Spanish LATAM examples (football, macro, politics). Not tradable markets and not real odds or liquidity.</p>
           </details>
           <details class="faq__item card">
             <summary data-i18n="faq.q5">What does $MERLAT do on day one?</summary>

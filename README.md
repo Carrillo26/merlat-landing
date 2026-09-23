@@ -4,19 +4,10 @@ LATAM-first prediction market fundraising page for **US memecoin / pump.fun trad
 
 **Visual direction:** FintechX-style light premium SaaS layout × **Señal Editorial** palette (paper / ink / charcoal / `#E10600`). Distinct from v1 editorial brutalism.
 
-## Live site
-
-**https://carrillo26.github.io/merlat-landing/**
-
-GitHub Pages source: **Deploy from a branch** → branch **`main`** → folder **`/`** (repository root), so `index.html` is served at `/`.
-
-Repo → **Settings** → **Pages** → Build and deployment → Source **Deploy from a branch** → Branch **`main`** / **`/ (root)`** → Save. The first build often takes 1–2 minutes.
-
-Phone-friendly: the page uses a mobile viewport, a burger nav under 960px, and stacked sections.
-
 ## Preview
 
 ```bash
+cd /workspace/merlat-landing-v2-fusion
 python3 -m http.server 8082
 # visit http://localhost:8082
 ```
@@ -59,12 +50,18 @@ Do **not** invent raised amounts, licenses, partnerships, or claim licensed real
 - Funds: **35% product · 25% legal · 20% marketing · 15% liquidity/token · 5% ops**
 - Utilities: fee discount · governance · staking/fee share (Planned / Roadmap)
 
-## Sections
+## Sections (slim · pump.fun traders)
 
-1. Nav · 2. Hero + stats · 3. Features (how it works) · 4. Product preview (phone mock) · 5. Why LATAM / trust · 6. Raise · 7. Use of funds · 8. Token · 9. Roadmap · 10. FAQ · 11. Final CTA · 12. Footer disclaimers
+1. Nav · 2. Hero + stats · 3. Product preview (phone mock) · 4. Why LATAM · 5. Raise + use of funds · 6. Token · 7. FAQ (3) · 8. Final CTA · Footer disclaimers
+
+Removed from main scroll: How it works / features · trust strip · 5-phase roadmap.
 
 ## Files
 
 `index.html` · `styles.css` · `script.js` · `assets/logo.svg` · `VERSION.md` · this README
 
 See `VERSION.md` for v1 vs v2 relationship.
+
+## GitHub Pages
+
+Static site ready for project Pages: root `index.html`, relative `styles.css` / `script.js` / `assets/`. Replace `{{PLACEHOLDERS}}` before public launch. Do not invent raised amounts or licenses.
