@@ -943,51 +943,163 @@ ul, ol {
   color: rgba(255, 255, 255, 0.65);
   font-size: 0.95rem;
 }
-.fund-list--on-dark {
-  margin-inline: auto;
-}
-
-/* ——— Funds ——— */
-.fund-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
+/* ——— Funds pie / donut ——— */
+.fund-pie {
+  --fund-product: #e10600;
+  --fund-legal: #ff8a80;
+  --fund-marketing: #f4f3ed;
+  --fund-liquidity: #00c4b8;
+  --fund-ops: #8a8a8a;
+  display: grid;
+  gap: 28px;
+  align-items: center;
   max-width: 720px;
   margin-inline: auto;
 }
-.fund-item {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  padding: 16px 18px;
-  box-shadow: var(--shadow);
+@media (min-width: 720px) {
+  .fund-pie {
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    gap: 40px;
+  }
 }
-.fund-item--accent {
-  border-color: rgba(225, 6, 0, 0.3);
+.fund-pie__chart {
+  position: relative;
+  width: min(220px, 70vw);
+  aspect-ratio: 1;
+  margin-inline: auto;
+  transform: rotate(-7deg);
+  transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
 }
-.fund-item__meta {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  font-weight: 650;
-  margin-bottom: 10px;
+.fund-pie.is-drawn .fund-pie__chart {
+  transform: rotate(0deg);
 }
-.fund-item__meta strong {
-  color: var(--red);
-  font-variant-numeric: tabular-nums;
-}
-.fund-item__bar {
-  height: 8px;
-  background: rgba(18, 18, 18, 0.06);
-  border-radius: 999px;
-  overflow: hidden;
-}
-.fund-item__bar i {
+.fund-pie__svg {
   display: block;
+  width: 100%;
   height: 100%;
-  background: var(--red);
-  border-radius: inherit;
+  overflow: visible;
+}
+.fund-pie__track {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 14;
+}
+.fund-pie__seg {
+  fill: none;
+  stroke-width: 14;
+  stroke-linecap: butt;
+  transition:
+    stroke-dasharray 1s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
+}
+.fund-pie__seg[data-seg="product"] {
+  stroke: var(--fund-product);
+  stroke-dasharray: 34.1 65.9;
+  stroke-dashoffset: 0;
+}
+.fund-pie__seg[data-seg="legal"] {
+  stroke: var(--fund-legal);
+  stroke-dasharray: 24.1 75.9;
+  stroke-dashoffset: -35;
+}
+.fund-pie__seg[data-seg="marketing"] {
+  stroke: var(--fund-marketing);
+  stroke-dasharray: 19.1 80.9;
+  stroke-dashoffset: -60;
+}
+.fund-pie__seg[data-seg="liquidity"] {
+  stroke: var(--fund-liquidity);
+  stroke-dasharray: 14.1 85.9;
+  stroke-dashoffset: -80;
+}
+.fund-pie__seg[data-seg="ops"] {
+  stroke: var(--fund-ops);
+  stroke-dasharray: 4.1 95.9;
+  stroke-dashoffset: -95;
+}
+/* JS: start empty, then is-drawn fills with stagger */
+.js .fund-pie:not(.is-drawn) .fund-pie__seg {
+  stroke-dasharray: 0 100;
+}
+.fund-pie.is-drawn .fund-pie__seg[data-seg="product"] { transition-delay: 0ms; }
+.fund-pie.is-drawn .fund-pie__seg[data-seg="legal"] { transition-delay: 100ms; }
+.fund-pie.is-drawn .fund-pie__seg[data-seg="marketing"] { transition-delay: 200ms; }
+.fund-pie.is-drawn .fund-pie__seg[data-seg="liquidity"] { transition-delay: 300ms; }
+.fund-pie.is-drawn .fund-pie__seg[data-seg="ops"] { transition-delay: 400ms; }
+.fund-pie__center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+.fund-pie__center-val {
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  opacity: 0;
+  transform: scale(0.92);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.45s,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;
+}
+.fund-pie.is-drawn .fund-pie__center-val {
+  opacity: 1;
+  transform: scale(1);
+}
+.fund-pie__legend {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+.fund-pie__item {
+  display: grid;
+  grid-template-columns: 12px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: default;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+.fund-pie__item:hover,
+.fund-pie__item.is-active {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+.fund-pie__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.fund-pie__item[data-seg="product"] .fund-pie__dot { background: var(--fund-product); }
+.fund-pie__item[data-seg="legal"] .fund-pie__dot { background: var(--fund-legal); }
+.fund-pie__item[data-seg="marketing"] .fund-pie__dot { background: var(--fund-marketing); }
+.fund-pie__item[data-seg="liquidity"] .fund-pie__dot { background: var(--fund-liquidity); }
+.fund-pie__item[data-seg="ops"] .fund-pie__dot { background: var(--fund-ops); }
+.fund-pie__label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+.fund-pie__pct {
+  font-variant-numeric: tabular-nums;
+  font-weight: 750;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+.fund-pie.is-dimming .fund-pie__seg:not(.is-emphasis) {
+  opacity: 0.28;
+}
+.fund-pie.is-dimming .fund-pie__seg.is-emphasis {
+  opacity: 1;
 }
 
 /* ——— Honesty / contract ——— */
@@ -1331,5 +1443,19 @@ ul, ol {
   }
   .app-mock__signal-dot {
     box-shadow: none;
+  }
+  .fund-pie__chart,
+  .fund-pie.is-drawn .fund-pie__chart {
+    transform: none !important;
+    transition: none !important;
+  }
+  .fund-pie__seg {
+    transition: none !important;
+  }
+  .fund-pie__center-val,
+  .fund-pie.is-drawn .fund-pie__center-val {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

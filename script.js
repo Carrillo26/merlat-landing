@@ -622,6 +622,88 @@
   }
 
 
+
+  function initFundPie() {
+    var root = document.querySelector("[data-fund-pie]");
+    if (!root) return;
+
+    var circles = Array.prototype.slice.call(
+      root.querySelectorAll(".fund-pie__seg")
+    );
+    var items = Array.prototype.slice.call(
+      root.querySelectorAll(".fund-pie__item")
+    );
+
+    function clearEmphasis() {
+      root.classList.remove("is-dimming");
+      circles.forEach(function (c) {
+        c.classList.remove("is-emphasis");
+      });
+      items.forEach(function (it) {
+        it.classList.remove("is-active");
+      });
+    }
+
+    function emphasize(key) {
+      root.classList.add("is-dimming");
+      circles.forEach(function (c) {
+        c.classList.toggle(
+          "is-emphasis",
+          c.getAttribute("data-seg") === key
+        );
+      });
+      items.forEach(function (it) {
+        it.classList.toggle(
+          "is-active",
+          it.getAttribute("data-seg") === key
+        );
+      });
+    }
+
+    items.forEach(function (item) {
+      item.addEventListener("mouseenter", function () {
+        emphasize(item.getAttribute("data-seg"));
+      });
+      item.addEventListener("mouseleave", clearEmphasis);
+      item.addEventListener("focus", function () {
+        emphasize(item.getAttribute("data-seg"));
+      });
+      item.addEventListener("blur", clearEmphasis);
+    });
+
+    function draw() {
+      if (root.classList.contains("is-drawn")) return;
+      root.classList.add("is-drawn");
+    }
+
+    if (prefersReducedMotion()) {
+      draw();
+      return;
+    }
+
+    var trigger = root;
+    if (!("IntersectionObserver" in window)) {
+      draw();
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          draw();
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px 0px -8% 0px",
+        threshold: 0.2,
+      }
+    );
+    observer.observe(trigger);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     applyLang(getStoredLang());
     initLangToggle();
@@ -630,5 +712,6 @@
     initActiveNav();
     initReveals();
     initMarketRotate();
+    initFundPie();
   });
 })();
