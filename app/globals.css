@@ -151,7 +151,9 @@ ul, ol {
   letter-spacing: -0.02em;
 }
 .nav__brand img {
-  border-radius: 8px;
+  display: block;
+  height: 32px;
+  width: auto;
 }
 .nav__links {
   display: none;
@@ -1258,7 +1260,9 @@ ul, ol {
   margin-bottom: 20px;
 }
 .footer__brand img {
-  border-radius: 6px;
+  display: block;
+  height: 28px;
+  width: 28px;
 }
 .footer__disclaimers {
   display: flex;

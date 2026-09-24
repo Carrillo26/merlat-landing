@@ -20,7 +20,7 @@ export function Footer() {
       <div className="container footer__inner">
         <div className="footer__brand">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/logo.svg" alt="" width={28} height={28} />
+          <img src="/merlat-mark.png" alt="" width={28} height={28} />
           <span>Merlat</span>
         </div>
         <div className="footer__disclaimers">

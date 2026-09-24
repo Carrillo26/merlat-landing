@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   title: "Merlat — LATAM Prediction Markets | $MERLAT",
   description:
     "Merlat — LATAM-first prediction markets. Community raise for a real product thesis, not just another memecoin.",
-  icons: { icon: "/logo.svg" },
 };
 
 export const viewport: Viewport = {

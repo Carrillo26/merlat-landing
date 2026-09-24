@@ -84,5 +84,6 @@ components/sections/*
 components/ui/*
 lib/i18n.ts
 lib/site.ts
-public/logo.svg
+public/merlat-logo.png
+app/icon.png
 ```

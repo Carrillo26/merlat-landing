@@ -75,8 +75,7 @@ export function Nav() {
         <div className="container nav__inner">
           <a className="nav__brand" href="#top" aria-label="Merlat home">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.svg" alt="" width={32} height={32} />
-            <span>Merlat</span>
+            <img src="/merlat-logo.png" alt="merlat" width={114} height={32} />
           </a>
           <nav className="nav__links" aria-label="Primary">
             {LINKS.map((link) => {
