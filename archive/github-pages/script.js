@@ -30,11 +30,6 @@
       "faq.q4": "What do the market cards show?",
       "faq.q5": "What does $MERLAT do on day one?",
       "faq.title": "FAQ",
-      "footer.d1": "Crypto risk: Digital assets are highly volatile. You can lose all capital. Past performance is not indicative of future results.",
-      "footer.d2": "Not financial advice: Nothing on this site is an offer, solicitation, or recommendation to buy or sell any asset.",
-      "footer.d3": "Availability: Not available where prohibited. Users are responsible for complying with local law.",
-      "footer.d4": "LATAM regulatory uncertainty: Prediction markets and related tokens face evolving rules across jurisdictions. Merlat does not claim licensed real-money operations in Brazil or elsewhere unless explicitly stated after counsel review.",
-      "footer.d5": "Illustrative markets and percentages are mockups only. Placeholders like {{PUMPFUN_URL}} must be replaced before public launch.",
       "footer.rights": "All rights reserved.",
       "funds.eyebrow": "Locked allocation",
       "funds.legal": "Legal / compliance",
@@ -102,7 +97,6 @@
       "markets.catMacro": "Macro",
       "markets.catPolitics": "Política",
       "markets.catSports": "Fútbol",
-      "markets.eyebrow": "Illustrative · not live",
       "markets.login": "Entrar",
       "markets.m1count": "3 mercados",
       "markets.m1o1": "Brasil",
@@ -123,7 +117,7 @@
       "markets.no": "No",
       "markets.note": "Illustrative layouts for storytelling. They are not tradable markets and do not reflect real odds or liquidity.",
       "markets.signup": "Registrarse",
-      "markets.sub": "Football, inflation, elections — the questions people already argue about in Spanish and Portuguese. Percentages below are mock UI only.",
+      "markets.sub": "Football, inflation, elections — the questions people already argue about in Spanish and Portuguese.",
       "markets.tabMacro": "Macro",
       "markets.tabPolitics": "Política",
       "markets.tabSports": "Deportes",
@@ -169,8 +163,6 @@
       "roadmap.title": "Roadmap",
       "token.contract": "Contract",
       "token.eyebrow": "$MERLAT · serious utilities",
-      "token.honestBody": "At token launch on pump.fun, $MERLAT is primarily a fundraising + community coordination token. Core product utilities (fee discount, governance, staking/fee share) are roadmap, not live day one. We will label what ships at each milestone. Buying the token is speculative and risky.",
-      "token.honestTitle": "Token honesty",
       "token.planned": "Planned",
       "token.roadmap": "Roadmap",
       "token.sub": "No moon-speak. What the token is for — and what ships when.",
@@ -211,11 +203,6 @@
       "faq.q4": "¿Qué muestran las tarjetas de mercado?",
       "faq.q5": "¿Qué hace $MERLAT el día uno?",
       "faq.title": "FAQ",
-      "footer.d1": "Riesgo cripto: Los activos digitales son altamente volátiles. Puedes perder todo el capital. El desempeño pasado no garantiza resultados futuros.",
-      "footer.d2": "No es asesoría financiera: Nada en este sitio es oferta, solicitud ni recomendación de comprar o vender ningún activo.",
-      "footer.d3": "Disponibilidad: No disponible donde esté prohibido. Los usuarios deben cumplir la ley local.",
-      "footer.d4": "Incertidumbre regulatoria LATAM: Los mercados de predicción y tokens relacionados enfrentan reglas en evolución. Merlat no afirma operaciones con dinero real licenciadas en Brasil u otros países salvo que se declare explícitamente tras revisión legal.",
-      "footer.d5": "Los mercados y porcentajes ilustrativos son solo mockups. Placeholders como {{PUMPFUN_URL}} deben reemplazarse antes del lanzamiento público.",
       "footer.rights": "Todos los derechos reservados.",
       "funds.eyebrow": "Asignación fija",
       "funds.legal": "Legal / compliance",
@@ -283,7 +270,6 @@
       "markets.catMacro": "Macro",
       "markets.catPolitics": "Política",
       "markets.catSports": "Fútbol",
-      "markets.eyebrow": "Ilustrativo · no en vivo",
       "markets.login": "Entrar",
       "markets.m1count": "3 mercados",
       "markets.m1o1": "Brasil",
@@ -304,7 +290,7 @@
       "markets.no": "No",
       "markets.note": "Layouts ilustrativos para contar la historia. No son mercados negociables ni reflejan odds o liquidez reales.",
       "markets.signup": "Registrarse",
-      "markets.sub": "Fútbol, inflación, elecciones — las preguntas que ya se discuten en español y portugués. Los porcentajes son UI de ejemplo.",
+      "markets.sub": "Fútbol, inflación, elecciones — las preguntas que ya se discuten en español y portugués.",
       "markets.tabMacro": "Macro",
       "markets.tabPolitics": "Política",
       "markets.tabSports": "Deportes",
@@ -350,8 +336,6 @@
       "roadmap.title": "Hoja de ruta",
       "token.contract": "Contrato",
       "token.eyebrow": "$MERLAT · utilidades serias",
-      "token.honestBody": "Al lanzar el token en pump.fun, $MERLAT es principalmente un token de fundraising + coordinación comunitaria. Las utilidades de producto (descuento de fees, gobernanza, staking/fee share) están en roadmap, no vivas el día uno. Etiquetaremos qué se entrega en cada hito. Comprar el token es especulativo y riesgoso.",
-      "token.honestTitle": "Honestidad del token",
       "token.planned": "Planificado",
       "token.roadmap": "Roadmap",
       "token.sub": "Sin moon-speak. Para qué sirve el token — y qué se entrega cuándo.",
@@ -402,18 +386,6 @@
         el.innerHTML = "Soft goal: <strong>$50K–$100K USD</strong>. Enough to ship product, not theater.";
       } else if (key === "raise.sub" && lang === "es") {
         el.innerHTML = "Meta suave: <strong>$50K–$100K USD</strong>. Suficiente para shippear producto, no teatro.";
-      } else if (key === "token.honestBody" && lang === "en") {
-        el.innerHTML = "At token launch on pump.fun, $MERLAT is primarily a fundraising + community coordination token. Core product utilities (fee discount, governance, staking/fee share) are <strong>roadmap</strong>, not live day one. We will label what ships at each milestone. Buying the token is speculative and risky.";
-      } else if (key === "token.honestBody" && lang === "es") {
-        el.innerHTML = "Al lanzar el token en pump.fun, $MERLAT es principalmente un token de fundraising + coordinación comunitaria. Las utilidades de producto (descuento de fees, gobernanza, staking/fee share) están en <strong>roadmap</strong>, no vivas el día uno. Etiquetaremos qué se entrega en cada hito. Comprar el token es especulativo y riesgoso.";
-      } else if (key.indexOf("footer.d") === 0) {
-        var parts = text.split(": ");
-        if (parts.length >= 2) {
-          el.innerHTML =
-            "<strong>" + parts[0] + ":</strong> " + parts.slice(1).join(": ");
-        } else {
-          el.textContent = text;
-        }
       } else {
         el.textContent = text;
       }

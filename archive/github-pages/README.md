@@ -52,7 +52,7 @@ Do **not** invent raised amounts, licenses, partnerships, or claim licensed real
 
 ## Sections (slim · pump.fun traders)
 
-1. Nav · 2. Hero + stats · 3. Product preview (phone mock) · 4. Why LATAM · 5. Raise + use of funds · 6. Token · 7. FAQ (3) · 8. Final CTA · Footer disclaimers
+1. Nav · 2. Hero + stats · 3. Product preview (phone mock) · 4. Why LATAM · 5. Raise + use of funds · 6. Token · 7. FAQ (3) · 8. Final CTA · Footer
 
 Removed from main scroll: How it works / features · trust strip · 5-phase roadmap.
 

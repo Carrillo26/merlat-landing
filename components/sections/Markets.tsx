@@ -45,7 +45,6 @@ export function Markets() {
       </div>
       <div className="container product-layout">
         <div className="product-layout__copy" data-reveal>
-          <span className="eyebrow">{t("markets.eyebrow")}</span>
           <h2>{t("markets.title")}</h2>
           <p>{t("markets.sub")}</p>
         </div>

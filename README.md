@@ -19,7 +19,7 @@ npm run start   # serve the production build
 npm run lint
 ```
 
-The phone mock stays in Spanish in both languages. Percentages inside it are illustrative UI, not live odds.
+The phone mock stays in Spanish in both languages.
 
 ## Deploy on Vercel (Hobby) — Carrillo26
 
@@ -70,7 +70,7 @@ Tailwind theme colors: `paper`, `ink`, `charcoal`, `accent`, `app-teal`.
 
 ## Sections
 
-Nav, Hero, Markets (copy + Spanish phone mock, OriginKit Globe behind them), Why LATAM (verified stats, disclaimer, sources), Use of funds (donut draws on scroll), Token, FAQ (3), final CTA, footer disclaimers.
+Nav, Hero, Markets (copy + Spanish phone mock, OriginKit Globe behind them), Why LATAM (verified stats, disclaimer, sources), Use of funds (donut draws on scroll), Token, FAQ (3), final CTA, footer.
 
 The Markets globe is the supplied OriginKit component at `components/originkit/globe.tsx` (three.js + d3-geo). It was not installed with `npx originkit add`. LATAM land dots are `#E10600`; the rest of the world is dimmer. The phone mock stays in front and readable.
 

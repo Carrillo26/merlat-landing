@@ -12,10 +12,6 @@ const UTILITIES: { title: MessageKey; body: MessageKey; badge: MessageKey; muted
 
 export function Token() {
   const { t } = useI18n();
-  const honest = t("token.honestBody");
-  const roadmapAt = honest.indexOf("roadmap");
-  const honestBefore = roadmapAt === -1 ? honest : honest.slice(0, roadmapAt);
-  const honestAfter = roadmapAt === -1 ? "" : honest.slice(roadmapAt + "roadmap".length);
 
   return (
     <section className="section section--muted" id="token">
@@ -36,13 +32,7 @@ export function Token() {
             </article>
           ))}
         </div>
-        <div className="honesty card" data-reveal>
-          <h3>{t("token.honestTitle")}</h3>
-          <p>
-            {honestBefore}
-            {roadmapAt !== -1 ? <strong>roadmap</strong> : null}
-            {honestAfter}
-          </p>
+        <div className="contract-panel card" data-reveal>
           <p className="contract">
             <span className="eyebrow">{t("token.contract")}</span>
             <code>{site.contractAddress}</code>
