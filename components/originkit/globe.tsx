@@ -14,13 +14,16 @@ import {
     Mesh,
     Group,
     InstancedMesh,
-    Matrix4,
     Raycaster,
     Vector2,
     TubeGeometry,
     CatmullRomCurve3,
     Vector3,
     CanvasTexture,
+    BufferGeometry,
+    Float32BufferAttribute,
+    Points,
+    PointsMaterial,
 } from "three";
 import { geoEquirectangular, geoPath } from "d3-geo";
 
@@ -452,7 +455,7 @@ export default function Globe({
             }
         }
 
-        let dotInstances: InstancedMesh | Mesh | null = null;
+        let dotInstances: InstancedMesh | Mesh | Points | null = null;
         let markerMeshes: Mesh[] = [];
 
         const loadWorldData = async () => {
@@ -686,7 +689,6 @@ export default function Globe({
                         }
                     }
 
-                    const matrix = new Matrix4();
                     const addDotInstances = (
                         coords: number[][],
                         colorHex: string,
@@ -694,35 +696,35 @@ export default function Globe({
                         opacity: number
                     ) => {
                         if (coords.length === 0) return null;
-                        const dotGeometry = new SphereGeometry(
-                            0.01 * dotSizeMultiplier * sizeScale,
-                            4,
-                            4
-                        );
-                        const dotMaterial = new MeshBasicMaterial({
-                            color: new Color(colorHex),
-                            transparent: opacity < 1,
-                            opacity,
-                        });
-                        const instanced = new InstancedMesh(
-                            dotGeometry,
-                            dotMaterial,
-                            coords.length
-                        );
+                        // Screen-space points: the original 0.01 spheres are sub-pixel
+                        // at scale 8 and do not draw on software WebGL.
+                        const positions = new Float32Array(coords.length * 3);
                         for (let i = 0; i < coords.length; i++) {
                             const [lng, lat] = coords[i];
                             const pos = latLngToPosition(lat, lng);
-                            matrix.makeScale(1, 1, 1);
-                            matrix.setPosition(
-                                pos.x * globeRadius,
-                                pos.y * globeRadius,
-                                pos.z * globeRadius
-                            );
-                            instanced.setMatrixAt(i, matrix);
+                            const radius = globeRadius * 1.012;
+                            positions[i * 3] = pos.x * radius;
+                            positions[i * 3 + 1] = pos.y * radius;
+                            positions[i * 3 + 2] = pos.z * radius;
                         }
-                        instanced.instanceMatrix.needsUpdate = true;
-                        globeGroup.add(instanced);
-                        return instanced;
+                        const dotGeometry = new BufferGeometry();
+                        dotGeometry.setAttribute(
+                            "position",
+                            new Float32BufferAttribute(positions, 3)
+                        );
+                        const dotMaterial = new PointsMaterial({
+                            color: new Color(colorHex),
+                            size: 11 * dotSizeMultiplier * sizeScale,
+                            sizeAttenuation: false,
+                            transparent: opacity < 1,
+                            opacity,
+                            depthTest: false,
+                            depthWrite: false,
+                        });
+                        const cloud = new Points(dotGeometry, dotMaterial);
+                        cloud.renderOrder = 2;
+                        globeGroup.add(cloud);
+                        return cloud;
                     };
 
                     // Merlat: LATAM land in brand red; rest-of-world dimmer white/gray
