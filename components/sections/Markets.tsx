@@ -37,17 +37,17 @@ export function Markets() {
           showGrid
           speed={2}
           stopOnHover
-          scale={8}
+          scale={9}
           initialLatitude={-5}
           initialLongitude={-60}
           markerConfig={GLOBE_MARKERS}
         />
       </div>
       <div className="container product-layout">
-        <div className="product-layout__copy" data-reveal>
+        <header className="section-head product-layout__copy" data-reveal>
           <h2>{t("markets.title")}</h2>
           <p>{t("markets.sub")}</p>
-        </div>
+        </header>
         <div className="markets-stage" data-reveal>
           <PhoneMock />
         </div>

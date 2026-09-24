@@ -1,6 +1,6 @@
 "use client";
 
-// Merlat Markets: initialLatitude={-5} initialLongitude={-60} scale={8} fill="dots"
+// Merlat Markets: initialLatitude={-5} initialLongitude={-60} scale={9} fill="dots"
 // markerConfig with São Paulo, CDMX, Bogotá optional
 // LATAM land dots use Merlat red #E10600; rest-of-world dots are dimmer white/gray.
 import { useEffect, useRef, useState, type CSSProperties } from "react";
@@ -185,6 +185,25 @@ interface DotsConfig {
     density: number;
     allDots: boolean;
 }
+
+/**
+ * Module-scoped so the effect dependency array stays stable.
+ * Inline default objects are a new reference every render; combined with
+ * setState after the land fetch, that was tearing down the WebGL scene
+ * (and the canvas) as soon as the globe finished loading.
+ */
+const DEFAULT_DOTS: DotsConfig = {
+    color: "#ffffff",
+    size: 5,
+    density: 8,
+    allDots: false,
+};
+const DEFAULT_MARKERS: MarkerConfig = {
+    markers: [],
+    color: "#00f7ff",
+    size: 40,
+};
+
 interface GlobeProps {
     speed?: number;
     smoothing?: number;
@@ -211,12 +230,12 @@ interface GlobeProps {
 export default function Globe({
     speed = 2,
     smoothing = 8,
-    dots = { color: "#ffffff", size: 5, density: 8, allDots: false },
+    dots = DEFAULT_DOTS,
     fill = "dots",
     fillColor = "#ffffff",
     scale = 8,
     stopOnHover = true,
-    markerConfig = { markers: [], color: "#00f7ff", size: 40 },
+    markerConfig = DEFAULT_MARKERS,
     direction = "left",
     initialLatitude = 23,
     initialLongitude = -23,
@@ -254,6 +273,7 @@ export default function Globe({
     useEffect(() => {
         if (!containerRef.current) return;
         const container = containerRef.current;
+        let cancelled = false;
         const containerWidth =
             container.clientWidth || container.offsetWidth || 800;
         const containerHeight =
@@ -460,10 +480,10 @@ export default function Globe({
 
         const loadWorldData = async () => {
             try {
-                setIsLoading(true);
                 const response = await fetch(
                     "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/50m/physical/ne_50m_land.json"
                 );
+                if (cancelled) return;
                 if (!response.ok) throw new Error("Failed to load land data");
                 const landFeatures = (await response.json()) as {
                     features: LandFeature[];
@@ -727,18 +747,18 @@ export default function Globe({
                         return cloud;
                     };
 
-                    // Merlat: LATAM land in brand red; rest-of-world dimmer white/gray
+                    // Merlat: LATAM land in brand red; rest-of-world light dots on the dark ocean
                     const latamMesh = addDotInstances(
                         latamCoordinates,
                         "#E10600",
-                        1.15,
+                        1.35,
                         1
                     );
                     const otherMesh = addDotInstances(
                         otherCoordinates,
-                        "#c8c8c8",
+                        "#F4F3ED",
                         1,
-                        0.45
+                        0.88
                     );
                     // Keep a reference for cleanup (prefer LATAM mesh if present)
                     dotInstances = latamMesh || otherMesh;
@@ -748,12 +768,14 @@ export default function Globe({
                     }
                 }
 
+                if (cancelled) return;
                 updateMarkers();
                 renderer.render(scene, camera);
                 canvas.style.opacity = "1";
                 canvas.style.visibility = "visible";
                 setIsLoading(false);
             } catch {
+                if (cancelled) return;
                 setError("Failed to load land map data");
                 setIsLoading(false);
             }
@@ -954,9 +976,17 @@ export default function Globe({
         });
         resizeObserver.observe(container);
 
+        // Ocean is ready immediately. Land dots fill in after the GeoJSON fetch.
+        // Keeping the canvas hidden until that fetch returned meant a failed or
+        // restarted load left an empty Markets section.
+        renderer.render(scene, camera);
+        canvas.style.opacity = "1";
+        canvas.style.visibility = "visible";
+
         loadWorldData();
 
         return () => {
+            cancelled = true;
             if (animationFrameId !== null)
                 cancelAnimationFrame(animationFrameId);
             canvas.removeEventListener("mousedown", handleMouseDown);
@@ -977,12 +1007,12 @@ export default function Globe({
                 if (mat && !Array.isArray(mat)) mat.dispose();
             }
             renderer.dispose();
+            renderer.forceContextLoss();
             if (canvas.parentNode === container) container.removeChild(canvas);
         };
     }, [
         speed,
         smoothing,
-        dots,
         fill,
         fillColor,
         allDots,
@@ -1035,7 +1065,7 @@ export default function Globe({
                         flexDirection: "column",
                         alignItems: "center",
                         justifyContent: "center",
-                        color: "#ffffff",
+                        color: "#121212",
                         textAlign: "center",
                         padding: "16px",
                         fontFamily:
