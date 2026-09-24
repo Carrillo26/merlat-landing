@@ -773,6 +773,12 @@ ul, ol {
   max-width: 720px;
 }
 
+/* Keep the scroll-reveal slide inside this section so the disclaimer
+   does not paint over the dark funds band. */
+#latam {
+  overflow: clip;
+}
+
 /* Premium stats strip — Why LATAM */
 .latam-stats {
   display: grid;
