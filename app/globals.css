@@ -487,19 +487,27 @@ ul, ol {
   justify-content: center;
 }
 
-/* Globe sits behind the copy and phone. The mask and opacity keep both readable. */
+/* The sphere is framed in the center of this box (about 80% of the box at
+   scale 9). Size and place the box on the phone so the disc halos the mock
+   instead of sitting fully behind it. A short left fade keeps the copy clear. */
 #product {
   position: relative;
   overflow: hidden;
 }
 .markets-globe {
   position: absolute;
-  inset: 0;
   z-index: 0;
-  opacity: 0.72;
   pointer-events: none;
-  -webkit-mask-image: radial-gradient(ellipse at 72% 50%, #000 32%, transparent 72%);
-  mask-image: radial-gradient(ellipse at 72% 50%, #000 32%, transparent 72%);
+  width: 1080px;
+  height: 1080px;
+  top: 50%;
+  /* Right-column center of the product grid, shifted left so LATAM
+     (the front of the globe) clears the phone's left edge. */
+  left: calc(50% + min(294px, 25vw + 6px) - 90px);
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 100%);
+  mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 100%);
 }
 .markets-globe > div {
   width: 100%;
@@ -524,11 +532,36 @@ ul, ol {
 #product .markets-stage {
   pointer-events: auto;
 }
+#product .product-layout__copy.section-head {
+  margin-bottom: 0;
+}
 @media (max-width: 899px) {
+  /* Phone is nearly full-bleed, so lift the disc until LATAM sits in the
+     gap above the mock. The mask keeps the eyebrow and title on paper. */
   .markets-globe {
-    opacity: 0.38;
-    -webkit-mask-image: radial-gradient(ellipse at 50% 68%, #000 18%, transparent 68%);
-    mask-image: radial-gradient(ellipse at 50% 68%, #000 18%, transparent 68%);
+    width: min(760px, 200vw);
+    height: min(760px, 200vw);
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+    -webkit-mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 34%,
+      #000 44%,
+      #000 100%
+    );
+    mask-image: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 34%,
+      #000 44%,
+      #000 100%
+    );
+  }
+  #product .markets-stage {
+    margin-top: 120px;
   }
 }
 
