@@ -1139,6 +1139,41 @@ ul, ol {
   color: var(--ink);
 }
 
+/* Token: iridescent coins sit on ink. Copy stays in the clear center. */
+#token.section--token {
+  position: relative;
+  overflow: hidden;
+  background: #000000;
+  padding: 128px 0 140px;
+}
+#token .token-coins {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+#token .token-coins canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#token .token-content {
+  position: relative;
+  z-index: 1;
+}
+#token .section-head h2,
+#token .section-head p {
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.75);
+}
+#token .card {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 720px) {
+  #token.section--token {
+    padding: 72px 0 80px;
+  }
+}
+
 /* ——— Roadmap ——— */
 .roadmap {
   list-style: none;
