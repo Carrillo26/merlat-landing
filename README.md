@@ -72,7 +72,7 @@ Tailwind theme colors: `paper`, `ink`, `charcoal`, `accent`, `app-teal`.
 
 Nav, Hero, Markets (copy + Spanish phone mock, OriginKit Globe behind them), Why LATAM (verified stats, disclaimer, sources), Use of funds (donut draws on scroll), Token, FAQ (3), final CTA, footer disclaimers.
 
-The Markets globe is `components/originkit/globe.tsx` (three.js + d3-geo, base preset). It was not installed with `npx originkit add`. LATAM land is `#E10600`; the rest of the world is dimmer. The phone mock stays in front and readable.
+The Markets globe is the supplied OriginKit component at `components/originkit/globe.tsx` (three.js + d3-geo). It was not installed with `npx originkit add`. LATAM land dots are `#E10600`; the rest of the world is dimmer. The phone mock stays in front and readable.
 
 ## Project layout
 

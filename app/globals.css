@@ -499,13 +499,13 @@ ul, ol {
   -webkit-mask-image: radial-gradient(ellipse at 72% 50%, #000 32%, transparent 72%);
   mask-image: radial-gradient(ellipse at 72% 50%, #000 32%, transparent 72%);
 }
-.markets-globe .originkit-globe {
+.markets-globe > div {
   width: 100%;
   height: 100%;
   pointer-events: auto;
   cursor: grab;
 }
-.markets-globe .originkit-globe:active {
+.markets-globe > div:active {
   cursor: grabbing;
 }
 .markets-globe canvas {
