@@ -485,6 +485,51 @@ ul, ol {
   justify-content: center;
 }
 
+/* Globe sits behind the copy and phone. The mask and opacity keep both readable. */
+#product {
+  position: relative;
+  overflow: hidden;
+}
+.markets-globe {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.72;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at 72% 50%, #000 32%, transparent 72%);
+  mask-image: radial-gradient(ellipse at 72% 50%, #000 32%, transparent 72%);
+}
+.markets-globe .originkit-globe {
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  cursor: grab;
+}
+.markets-globe .originkit-globe:active {
+  cursor: grabbing;
+}
+.markets-globe canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#product .product-layout {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+#product .product-layout__copy,
+#product .markets-stage {
+  pointer-events: auto;
+}
+@media (max-width: 899px) {
+  .markets-globe {
+    opacity: 0.38;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 68%, #000 18%, transparent 68%);
+    mask-image: radial-gradient(ellipse at 50% 68%, #000 18%, transparent 68%);
+  }
+}
+
 .device {
   margin: 0;
   width: min(100%, 360px);
