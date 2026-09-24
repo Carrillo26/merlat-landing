@@ -71,7 +71,10 @@
     </section>
 
     <!-- PRODUCT PREVIEW -->
-    <section class="section section--muted" id="product">
+    <section class="section section--muted section--globe" id="product">
+      <div class="markets-globe" aria-hidden="true">
+        <canvas id="marketsGlobe"></canvas>
+      </div>
       <div class="container product-layout">
         <div class="product-layout__copy" data-reveal>
           <span class="eyebrow" data-i18n="markets.eyebrow">Illustrative · not live</span>
@@ -446,5 +449,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+  <script src="assets/js/markets-globe.js" defer></script>
 </body>
 </html>

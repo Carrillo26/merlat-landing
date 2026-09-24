@@ -19,3 +19,7 @@
 | `/workspace/merlat-landing-v2-fusion/` | **This site** — FintechX SaaS chrome + Señal colors + Merlat content |
 
 v1 remains the editorial reference. v2 is a distinct visual direction with the same economics and honesty commitments.
+
+## Markets globe (v2 addition)
+
+Decorative LATAM-framed dotted Earth behind `#product` (vanilla three.js CDN + Natural Earth 110m land dots). Not OriginKit. See `assets/js/markets-globe.js` and `assets/js/land-dots.json`.
